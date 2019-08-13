@@ -5,7 +5,7 @@ export default{
       documentation: '文档',
       guide: '引导页',
       errorPages: '错误页面',
-      page401: '401',
+      page403: '403',
       page404: '404',
       errorLog: '错误日志',
       permission: '权限测试页',

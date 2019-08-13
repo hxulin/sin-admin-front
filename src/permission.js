@@ -26,17 +26,19 @@ router.beforeEach((to, from, next) => {
                     });
                 }).catch(err => {
                     store.dispatch('FedLogOut').then(() => {
-                        Notification.error({
-                            title: '登录失败',
-                            message: err
-                        });
-                        next({path: '/'})
-                    })
+                        if (err) {
+                            Notification.error({
+                                title: '错误提示',
+                                message: err
+                            });
+                        }
+                        next({path: '/'});
+                    });
                 });
             } else {
                 // 权限判断
                 if (store.getters.noPermissionPath.includes(to.redirectedFrom)) {
-                    next({path: '/401', replace: true, query: {noGoBack: true}});
+                    next({path: '/403', replace: true, query: {noGoBack: true}});
                 } else {
                     next();
                 }

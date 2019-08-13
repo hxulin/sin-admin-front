@@ -116,6 +116,7 @@ const user = {
                     commit('SET_TOKEN', '');
                     commit('SET_MENU_LIST', []);
                     commit('SET_NO_PERMISSION_PATH', []);
+                    commit('SET_LOGIN_INIT', false);  // 重置登录初始化信息
                     removeToken();
                     resolve();
                 }).catch(error => {
@@ -128,6 +129,9 @@ const user = {
         FedLogOut({commit}) {
             return new Promise(resolve => {
                 commit('SET_TOKEN', '');
+                commit('SET_MENU_LIST', []);
+                commit('SET_NO_PERMISSION_PATH', []);
+                commit('SET_LOGIN_INIT', false);  // 重置登录初始化信息
                 removeToken();
                 resolve();
             });

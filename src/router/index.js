@@ -46,8 +46,8 @@ export const constantRouterMap = [{
     component: () => import('@/views/errorPage/404'),
     hidden: true
 }, {
-    path: '/401',
-    component: () => import('@/views/errorPage/401'),
+    path: '/403',
+    component: () => import('@/views/errorPage/403'),
     hidden: true
 }, {
     path: '/guide',
@@ -79,11 +79,11 @@ export const asyncRouterMap = [{
         icon: '404'
     },
     children: [{
-        path: '401',
-        component: () => import('@/views/errorPage/401'),
-        name: 'Page401',
+        path: '403',
+        component: () => import('@/views/errorPage/403'),
+        name: 'Page403',
         meta: {
-            title: 'page401',
+            title: 'page403',
             noCache: true
         }
     }, {
@@ -111,7 +111,7 @@ export const asyncRouterMap = [{
         component: () => import('@/views/permission/page'),
         name: 'PagePermission',
         meta: {
-            auth: '/permission/pagePermission',
+            // auth: '/permission/pagePermission',
             title: 'pagePermission',
             roles: ['admin'] // or you can only set roles in sub nav
         }

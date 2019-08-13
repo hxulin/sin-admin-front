@@ -5,7 +5,7 @@ export default {
       documentation: 'Documentation',
       guide: 'Guide',
       errorPages: 'Error Pages',
-      page401: '401',
+      page403: '403',
       page404: '404',
       errorLog: 'Error Log',
       permission: 'Permission',
