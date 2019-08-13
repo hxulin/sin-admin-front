@@ -22,11 +22,10 @@ instance.interceptors.request.use(
       config.headers['Sin-Token'] = getToken();
     }
     return config
-  },
-  error => {
+  }, error => {
     // Do something with request error
     console.log(error); // for debug
-    Promise.reject(error)
+    Promise.reject(error);
   }
 );
 
@@ -49,7 +48,7 @@ instance.interceptors.response.use(
         });
         return Promise.reject(undefined);
       }
-      return Promise.reject(response.data.msg)
+      return Promise.reject(response.data.msg);
     } else {
       Notification.error({
         title: '网络连接失败',
