@@ -35,7 +35,7 @@ export const constantRouterMap = [{
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: {title: 'dashboard', icon: 'dashboard', noCache: true, affix: true}
+        meta: {title: '首页', icon: 'dashboard', noCache: true, affix: true}
     }]
 }, {
     path: '/login',
@@ -57,7 +57,7 @@ export const constantRouterMap = [{
         path: 'index',
         component: () => import('@/views/guide/index'),
         name: 'Guide',
-        meta: {title: 'guide', icon: 'guide', noCache: true}
+        meta: {title: '引导页', icon: 'guide', noCache: true}
     }]
 }];
 
@@ -70,12 +70,62 @@ export default new Router({
 
 
 export const asyncRouterMap = [{
+    path: '/system',
+    component: Layout,
+    redirect: 'noredirect',
+    name: 'System',
+    meta: {
+        title: '系统管理',
+        icon: 'system'
+    },
+    children: [{
+        path: '100',
+        component: () => import('@/views/errorPage/403'),
+        name: 'Page100',
+        meta: {
+            title: '用户管理',
+            noCache: true
+        }
+    }, {
+        path: '101',
+        component: () => import('@/views/errorPage/403'),
+        name: 'Page101',
+        meta: {
+            title: '角色管理',
+            noCache: true
+        }
+    }, {
+        path: '102',
+        component: () => import('@/views/errorPage/403'),
+        name: 'Page102',
+        meta: {
+            title: '部门管理',
+            noCache: true
+        }
+    }, {
+        path: '103',
+        component: () => import('@/views/errorPage/403'),
+        name: 'Page103',
+        meta: {
+            title: '字典管理',
+            noCache: true
+        }
+    }, {
+        path: '104',
+        component: () => import('@/views/errorPage/403'),
+        name: 'Page104',
+        meta: {
+            title: '菜单管理',
+            noCache: true
+        }
+    }]
+}, {
     path: '/error',
     component: Layout,
     redirect: 'noredirect',
     name: 'ErrorPages',
     meta: {
-        title: 'errorPages',
+        title: '错误页面',
         icon: '404'
     },
     children: [{
@@ -83,7 +133,7 @@ export const asyncRouterMap = [{
         component: () => import('@/views/errorPage/403'),
         name: 'Page403',
         meta: {
-            title: 'page403',
+            title: '403',
             noCache: true
         }
     }, {
@@ -91,7 +141,7 @@ export const asyncRouterMap = [{
         component: () => import('@/views/errorPage/404'),
         name: 'Page404',
         meta: {
-            title: 'page404',
+            title: '404',
             noCache: true
         }
     }]
@@ -101,8 +151,8 @@ export const asyncRouterMap = [{
     redirect: '/permission/index',
     alwaysShow: true, // will always show the root menu
     meta: {
-        auth: '/permission',
-        title: 'permission',
+        // auth: '/permission',
+        title: '权限测试页',
         icon: 'lock',
         roles: ['admin', 'editor'] // you can set roles in root nav
     },
@@ -112,7 +162,7 @@ export const asyncRouterMap = [{
         name: 'PagePermission',
         meta: {
             // auth: '/permission/pagePermission',
-            title: 'pagePermission',
+            title: '页面权限',
             roles: ['admin'] // or you can only set roles in sub nav
         }
     }, {
@@ -120,8 +170,8 @@ export const asyncRouterMap = [{
         component: () => import('@/views/permission/directive'),
         name: 'DirectivePermission',
         meta: {
-            auth: '/permission/directive',
-            title: 'directivePermission'
+            title: '指令权限',
+            auth: '/permission/directive'
             // if do not set roles, means: this page does not require permission
         }
     }]

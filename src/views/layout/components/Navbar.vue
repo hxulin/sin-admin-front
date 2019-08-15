@@ -12,13 +12,13 @@
 
                 <screenfull class="right-menu-item hover-effect"/>
 
-                <el-tooltip :content="$t('navbar.size')" effect="dark" placement="bottom">
+                <!--<el-tooltip :content="$t('navbar.size')" effect="dark" placement="bottom">
                     <size-select class="right-menu-item hover-effect"/>
-                </el-tooltip>
+                </el-tooltip>-->
 
-                <lang-select class="right-menu-item hover-effect"/>
+                <!--<lang-select class="right-menu-item hover-effect"/>-->
 
-                <el-tooltip :content="$t('navbar.theme')" effect="dark" placement="bottom">
+                <el-tooltip content="换肤" effect="dark" placement="bottom">
                     <theme-picker class="right-menu-item hover-effect"/>
                 </el-tooltip>
             </template>
@@ -26,14 +26,20 @@
             <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
                 <div class="avatar-wrapper">
                     <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-                    <i class="el-icon-caret-bottom"/>
+                    <i class="el-icon-caret-bottom"></i>
                 </div>
                 <el-dropdown-menu slot="dropdown">
-                    <router-link to="/">
+                    <!--<router-link to="/">
                         <el-dropdown-item>{{ $t('navbar.dashboard') }}</el-dropdown-item>
-                    </router-link>
+                    </router-link>-->
+                    <el-dropdown-item>
+                        <span style="display:block;" @click="logout">个人中心</span>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                        <span style="display:block;" @click="logout">修改密码</span>
+                    </el-dropdown-item>
                     <el-dropdown-item divided>
-                        <span style="display:block;" @click="logout">{{ $t('navbar.logOut') }}</span>
+                        <span style="display:block;" @click="logout">退出登录</span>
                     </el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
@@ -47,8 +53,8 @@
     import Hamburger from '@/components/Hamburger'
     import ErrorLog from '@/components/ErrorLog'
     import Screenfull from '@/components/Screenfull'
-    import SizeSelect from '@/components/SizeSelect'
-    import LangSelect from '@/components/LangSelect'
+    // import SizeSelect from '@/components/SizeSelect'
+    // import LangSelect from '@/components/LangSelect'
     import ThemePicker from '@/components/ThemePicker'
     import Search from '@/components/HeaderSearch'
 
@@ -58,8 +64,8 @@
             Hamburger,
             ErrorLog,
             Screenfull,
-            SizeSelect,
-            LangSelect,
+            // SizeSelect,
+            // LangSelect,
             ThemePicker,
             Search
         },
