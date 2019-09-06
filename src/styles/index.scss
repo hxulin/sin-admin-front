@@ -199,3 +199,8 @@ code {
 .multiselect--active {
   z-index: 1000 !important;
 }
+
+/* castle: 去除 ElementUI scrollbar 的横向滚动条 */
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}

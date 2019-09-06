@@ -79,9 +79,9 @@ export const asyncRouterMap = [{
         icon: 'system'
     },
     children: [{
-        path: '100',
-        component: () => import('@/views/errorPage/403'),
-        name: 'Page100',
+        path: 'user',
+        component: () => import('@/views/system/user'),
+        name: 'User',
         meta: {
             title: '用户管理',
             noCache: true

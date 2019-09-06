@@ -6,12 +6,13 @@
       <navbar/>
       <tags-view/>
       <app-main/>
+      <footer-bar/>
     </div>
   </div>
 </template>
 
 <script>
-import { Navbar, Sidebar, AppMain, TagsView } from './components'
+import { Navbar, Sidebar, AppMain, TagsView, FooterBar } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
 
 export default {
@@ -20,7 +21,8 @@ export default {
     Navbar,
     Sidebar,
     AppMain,
-    TagsView
+    TagsView,
+    FooterBar
   },
   mixins: [ResizeMixin],
   computed: {
