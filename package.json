@@ -17,7 +17,7 @@
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "path-to-regexp": "^3.1.0",
-    "qs": "^6.8.0",
+    "qs": "^6.8.3",
     "screenfull": "^4.2.1",
     "vue": "^2.6.10",
     "vue-i18n": "^8.14.0",
